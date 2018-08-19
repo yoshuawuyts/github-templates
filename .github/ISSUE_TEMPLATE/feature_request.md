@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Want us to add something to issue-template?
+about: Want us to add something to github-templates?
 ---
 
 # Feature Request

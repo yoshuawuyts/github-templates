@@ -1,13 +1,13 @@
 ---
 name: Question
-about: Have any questions regarding how issue-template works?
+about: Have any questions regarding how github-templates works?
 ---
 
 # Question
 ## Your Environment
 | Software         | Version(s) |
 | ---------------- | ---------- |
-| issue-template      |
+| github-templates      |
 | Rustc            |
 | Operating System |
 

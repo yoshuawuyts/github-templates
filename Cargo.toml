@@ -1,9 +1,9 @@
 [package]
-name = "issue-template"
+name = "github-templates"
 version = "0.1.0"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/yoshuawuyts/issue-template"
-documentation = "https://docs.rs/issue-template"
+repository = "https://github.com/yoshuawuyts/github-templates"
+documentation = "https://docs.rs/github-templates"
 description = "Generate GitHub issue templates"
 authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 readme = "README.md"

@@ -4,6 +4,6 @@
 ## Your Environment
 | Software         | Version(s) |
 | ---------------- | ---------- |
-| issue-template      |
+| github-templates      |
 | Rustc            |
 | Operating System |
