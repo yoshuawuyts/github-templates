@@ -29,8 +29,9 @@ impl Templates {
     let mut file = File::create(issue_dir.join("bug_report.md"))
       .context(::ErrorKind::Other)?;
 
+    let bug_report = str::replace(BUG_REPORT, "{{Project}}", &self.name);
     file
-      .write_all(BUG_REPORT.as_bytes())
+      .write_all(bug_report.as_bytes())
       .context(::ErrorKind::Other)?;
 
     Ok(())
