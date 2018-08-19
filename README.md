@@ -7,6 +7,9 @@ Generate GitHub issue templates.
 - [Documentation][8]
 - [Crates.io][2]
 
+## Screenshot
+![screenshot](./assets/screenshot.png)
+
 ## Usage
 ```txt
 github-templates 0.1.0
