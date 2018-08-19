@@ -6,6 +6,7 @@ use std::io::prelude::*;
 use std::path::PathBuf;
 
 static BUG_REPORT: &str = include_str!("../templates/bug_report.md");
+static QUESTION: &str = include_str!("../templates/question.md");
 
 /// GitHub template struct.
 pub struct Templates {
@@ -26,14 +27,21 @@ impl Templates {
     let issue_dir = self.dir.join("ISSUE_TEMPLATE");
     mkdirp(&issue_dir).context(::ErrorKind::Other)?;
 
-    let mut file = File::create(issue_dir.join("bug_report.md"))
-      .context(::ErrorKind::Other)?;
+    self.write("bug_report.md", BUG_REPORT)?;
+    self.write("question.md", QUESTION)?;
 
-    let bug_report = str::replace(BUG_REPORT, "{{Project}}", &self.name);
+    Ok(())
+  }
+
+  fn write(&self, file_name: &str, template: &str) -> ::Result<()> {
+    let issue_dir = self.dir.join("ISSUE_TEMPLATE");
+    let mut file =
+      File::create(issue_dir.join(file_name)).context(::ErrorKind::Other)?;
+
+    let bug_report = str::replace(template, "{{Project}}", &self.name);
     file
       .write_all(bug_report.as_bytes())
       .context(::ErrorKind::Other)?;
-
     Ok(())
   }
 }
