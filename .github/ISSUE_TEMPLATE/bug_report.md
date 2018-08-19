@@ -12,12 +12,12 @@ about: Did something not work as expected?
 | Operating System |
 
 ## Expected Behavior
-[Tell us what should have happened.]
+Tell us what should have happened.
 
 ## Current Behavior
-[Tell us what happens instead of the expected behavior. If you are seeing an
-error, please include the full error message and stack trace.]
+Tell us what happens instead of the expected behavior. If you are seeing an
+error, please include the full error message and stack trace.
 
 ## Code Sample
-[Please provide a code repository, gist, code snippet or sample files to
-reproduce the issue.]
+Please provide a code repository, gist, code snippet or sample files to
+reproduce the issue.

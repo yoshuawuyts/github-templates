@@ -9,10 +9,10 @@ extern crate structopt;
 #[macro_use]
 extern crate log;
 extern crate exitfailure;
-extern crate issue_template;
+extern crate github_templates;
 
 use exitfailure::ExitFailure;
-use issue_template::Cli;
+use github_templates::Cli;
 use structopt::StructOpt;
 
 fn main() -> Result<(), ExitFailure> {
@@ -23,7 +23,7 @@ fn main() -> Result<(), ExitFailure> {
 
   let dir = args.dir()?;
   let name = args.name()?;
-  let templ = issue_template::Templates::new(dir, name)?;
+  let templ = github_templates::Templates::new(dir, name)?;
   templ.write_all()?;
   Ok(())
 }

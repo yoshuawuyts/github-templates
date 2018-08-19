@@ -1,5 +1,5 @@
 ## Summary
-[Explain what is going on.]
+Explain what is going on.
 
 ## Your Environment
 | Software         | Version(s) |

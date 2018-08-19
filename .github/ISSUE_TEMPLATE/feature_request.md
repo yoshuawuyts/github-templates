@@ -4,15 +4,27 @@ about: Want us to add something to github-templates?
 ---
 
 # Feature Request
+## Summary
+One paragraph explanation of the feature.
+
+## Motivation
+Why are we doing this? What use cases does it support? What is the expected
+outcome?
+
 ## Expected Behavior
-[Tell us how the feature should work.]
+Tell us how the feature should work. Explain the feature largely in terms of
+examples.
 
-## Current Behavior
-[Explain the difference from the expected behavior.]
+## Drawbacks
+Why should we _not_ do this?
 
-## Possible Solution
-[Ideas how to implement this feature or a similar solution/workaround that
-already exists.]
+## Rationale and alternatives
+- Why is this design the best in the space of possible designs?
+- What other designs have been considered and what is the rationale for not
+  choosing them?
+- What is the impact of not doing this?
 
-## Examples
-[Examples help us understand the requested feature better.]
+## Unresolved Questions
+What related issues do you consider out of scope for this feature that could be
+addressed in the future independently of the solution that comes out of this
+feature?
