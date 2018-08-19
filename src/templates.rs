@@ -26,12 +26,13 @@ impl Templates {
     let issue_dir = self.dir.join("ISSUE_TEMPLATE");
     mkdirp(&issue_dir).context(::ErrorKind::Other)?;
 
-    let mut buf = File::create(issue_dir.join("bug_report.md"))
+    let mut file = File::create(issue_dir.join("bug_report.md"))
       .context(::ErrorKind::Other)?;
 
-    buf
+    file
       .write_all(BUG_REPORT.as_bytes())
       .context(::ErrorKind::Other)?;
+
     Ok(())
   }
 }

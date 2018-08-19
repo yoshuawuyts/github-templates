@@ -23,6 +23,7 @@ fn main() -> Result<(), ExitFailure> {
 
   let dir = args.dir()?;
   let name = args.name()?;
-  issue_template::Templates::new(dir, name)?;
+  let templ = issue_template::Templates::new(dir, name)?;
+  templ.write_all()?;
   Ok(())
 }
