@@ -4,8 +4,12 @@ use std::io;
 use std::path::PathBuf;
 use structopt;
 
+/// Command line parser.
 #[derive(Debug, StructOpt)]
-#[structopt(raw(setting = "structopt::clap::AppSettings::ColoredHelp"))]
+#[structopt(
+  name = "github-templates",
+  raw(setting = "structopt::clap::AppSettings::ColoredHelp")
+)]
 pub struct Cli {
   #[structopt(flatten)]
   logger: clap_flags::Log,
