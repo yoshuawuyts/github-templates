@@ -11,6 +11,10 @@ Generate GitHub issue templates.
 ```txt
 ```
 
+## Acknowledgements
+The templates included are based on [Parcel's excellent issue
+templates](https://github.com/parcel-bundler/parcel/tree/master/.github/ISSUE_TEMPLATE).
+
 ## Installation
 ```sh
 $ cargo add issue-template

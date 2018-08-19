@@ -7,6 +7,7 @@ use std::path::PathBuf;
 
 static BUG_REPORT: &str = include_str!("../templates/bug_report.md");
 static QUESTION: &str = include_str!("../templates/question.md");
+static FEATURE_REQUEST: &str = include_str!("../templates/feature_request.md");
 
 /// GitHub template struct.
 pub struct Templates {
@@ -29,6 +30,7 @@ impl Templates {
 
     self.write("bug_report.md", BUG_REPORT)?;
     self.write("question.md", QUESTION)?;
+    self.write("feature_request.md", FEATURE_REQUEST)?;
 
     Ok(())
   }
