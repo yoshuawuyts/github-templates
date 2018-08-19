@@ -12,7 +12,7 @@ about: Have any questions regarding how {{Project}} works?
 | Operating System |
 
 ## Question
-[Provide your question here.]
+Provide your question here.
 
 ## Context
-[How has this issue affected you? What are you trying to accomplish?]
+How has this issue affected you? What are you trying to accomplish?
