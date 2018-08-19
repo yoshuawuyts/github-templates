@@ -1,0 +1,24 @@
+[package]
+name = "issue-template"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoshuawuyts/issue-template"
+documentation = "https://docs.rs/issue-template"
+description = "Generate GitHub issue templates"
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+readme = "README.md"
+
+[dependencies]
+failure = "0.1.2"
+exitfailure = "0.5.1"
+human-panic = "1.0.0"
+structopt = "0.2.10"
+log = "0.4.4"
+clap_flags = "0.2.0"
+
+[dev-dependencies]
+
+[build-dependencies]
+structopt = "0.2.10"
+clap_flags = "0.2.0"
+failure = "0.1.2"
