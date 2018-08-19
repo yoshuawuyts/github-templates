@@ -6,6 +6,8 @@ extern crate failure;
 
 mod cli;
 mod error;
+mod templates;
 
 pub use cli::Cli;
 pub use error::{Error, ErrorKind, Result};
+pub use templates::Templates;

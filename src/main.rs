@@ -20,5 +20,8 @@ fn main() -> Result<(), ExitFailure> {
   let args = Cli::from_args();
   args.log(env!("CARGO_PKG_NAME"))?;
   info!("program started");
+
+  let name = args.name()?;
+  println!("{}", name);
   Ok(())
 }
