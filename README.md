@@ -34,7 +34,9 @@ ARGS:
 
 ## Acknowledgements
 The templates included are based on [Parcel's excellent issue
-templates](https://github.com/parcel-bundler/parcel/tree/master/.github/ISSUE_TEMPLATE).
+templates](https://github.com/parcel-bundler/parcel/tree/master/.github/ISSUE_TEMPLATE),
+and [Rust's RFC
+template](https://github.com/rust-lang/rfcs/blob/master/0000-template.md).
 
 ## Installation
 ```sh
