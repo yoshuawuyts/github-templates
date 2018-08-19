@@ -21,7 +21,8 @@ fn main() -> Result<(), ExitFailure> {
   args.log(env!("CARGO_PKG_NAME"))?;
   info!("program started");
 
+  let dir = args.dir()?;
   let name = args.name()?;
-  println!("{}", name);
+  issue_template::Templates::new(dir, name)?;
   Ok(())
 }
