@@ -4,7 +4,6 @@ use std::io;
 use std::path::PathBuf;
 use structopt;
 
-/// Command line parser.
 #[derive(Debug, StructOpt)]
 #[structopt(raw(setting = "structopt::clap::AppSettings::ColoredHelp"))]
 pub struct Cli {

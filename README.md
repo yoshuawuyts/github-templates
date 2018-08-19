@@ -9,6 +9,24 @@ Generate GitHub issue templates.
 
 ## Usage
 ```txt
+github-templates 0.1.0
+Yoshua Wuyts <yoshuawuyts@gmail.com>
+Generate GitHub issue templates.
+
+USAGE:
+    github-templates [FLAGS] [OPTIONS] [dir]
+
+FLAGS:
+    -h, --help         Prints help information
+    -P, --pretty       Enable pretty printing
+    -V, --version      Prints version information
+    -v, --verbosity    Pass many times for more log output
+
+OPTIONS:
+    -n, --name <name>    Project name. Defaults to target directory name
+
+ARGS:
+    <dir>    Target directory [default: .]
 ```
 
 ## Acknowledgements
