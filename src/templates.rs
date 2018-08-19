@@ -8,6 +8,7 @@ use std::path::PathBuf;
 static BUG_REPORT: &str = include_str!("../templates/bug_report.md");
 static QUESTION: &str = include_str!("../templates/question.md");
 static FEATURE_REQUEST: &str = include_str!("../templates/feature_request.md");
+static OTHER_ISSUE: &str = include_str!("../templates/other_issue.md");
 
 /// GitHub template struct.
 pub struct Templates {
@@ -28,15 +29,20 @@ impl Templates {
     let issue_dir = self.dir.join("ISSUE_TEMPLATE");
     mkdirp(&issue_dir).context(::ErrorKind::Other)?;
 
-    self.write("bug_report.md", BUG_REPORT)?;
-    self.write("question.md", QUESTION)?;
-    self.write("feature_request.md", FEATURE_REQUEST)?;
+    self.write(&issue_dir, "bug_report.md", BUG_REPORT)?;
+    self.write(&issue_dir, "question.md", QUESTION)?;
+    self.write(&issue_dir, "feature_request.md", FEATURE_REQUEST)?;
+    self.write(&self.dir, "ISSUE_TEMPLATE.md", OTHER_ISSUE)?;
 
     Ok(())
   }
 
-  fn write(&self, file_name: &str, template: &str) -> ::Result<()> {
-    let issue_dir = self.dir.join("ISSUE_TEMPLATE");
+  fn write(
+    &self,
+    issue_dir: &PathBuf,
+    file_name: &str,
+    template: &str,
+  ) -> ::Result<()> {
     let mut file =
       File::create(issue_dir.join(file_name)).context(::ErrorKind::Other)?;
 
