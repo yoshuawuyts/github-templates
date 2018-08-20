@@ -53,15 +53,9 @@ impl Cli {
       Some(name) => Ok(name.to_string().into()),
       None => {
         let dir = self.dir().context(::ErrorKind::Other)?;
-
-        let dirname = match dir.iter().last() {
-          Some(dirname) => dirname,
-          None => return Err(::ErrorKind::Other.into()), // No Path found.
-        };
-        match dirname.to_str() {
-          Some(dirname) => Ok(dirname.to_string()),
-          None => Err(::ErrorKind::Other.into()), // Invalid UTF-8.
-        }
+        let dir = dir.iter().last().ok_or_else(|| ::ErrorKind::Other)?;
+        let dir = dir.to_str().ok_or_else(|| ::ErrorKind::Other)?;
+        Ok(dir.to_string())
       }
     }
   }
