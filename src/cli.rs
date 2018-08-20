@@ -7,7 +7,7 @@ use structopt;
 /// Command line parser.
 #[derive(Debug, StructOpt)]
 #[structopt(
-  name = "github-templates",
+  about = "Generate GitHub issue templates.",
   raw(setting = "structopt::clap::AppSettings::ColoredHelp")
 )]
 pub struct Cli {
@@ -53,6 +53,7 @@ impl Cli {
       Some(name) => Ok(name.to_string().into()),
       None => {
         let dir = self.dir().context(::ErrorKind::Other)?;
+
         let dirname = match dir.iter().last() {
           Some(dirname) => dirname,
           None => return Err(::ErrorKind::Other.into()), // No Path found.
