@@ -50,7 +50,7 @@ impl Cli {
   #[inline]
   pub fn name(&self) -> ::Result<String> {
     match &self.name {
-      Some(name) => Ok(name.to_string().into()),
+      Some(name) => Ok(name.to_string()),
       None => {
         let dir = self.dir().context(::ErrorKind::Other)?;
         let dir = dir.iter().last().ok_or_else(|| ::ErrorKind::Other)?;
