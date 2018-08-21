@@ -10,24 +10,15 @@ env:
 
 matrix:
   include:
-    # Linux
     - env: TARGET=armv7-unknown-linux-gnueabihf
       rust: nightly
     - env: TARGET=x86_64-unknown-linux-musl
       rust: nightly
-
-    # OSX
     - env: TARGET=x86_64-apple-darwin
       rust: nightly
       os: osx
-
-    # *BSD
     - env: TARGET=x86_64-unknown-freebsd DISABLE_TESTS=1
       rust: nightly
-
-    # Windows
-    # - env: TARGET=x86_64-pc-windows-gnu
-    #   rust: nightly
 
 before_install:
   - set -e
@@ -45,15 +36,14 @@ before_deploy:
   - sh scripts/before_deploy.sh
 
 deploy:
-  api_key:
-    secure: "QZmkrA+bDTZxXAKEboA/YVrpEPur68oywoASyczDOZHynzGCtyGRltroyg0apgIj5WYgrYpf5L3Yd3jyp6mFUpSLMyz9BQI0u+SIMRloyV5z94wj3yRGg8Lq1Kx0gLfP5CihCjZzoMftvZQphLTkrhv/rSdnLYjrfe6E/m0dapWzQ3pElixuc9gm2s5lIk4LefqBEywd7WQUkNwzFN/ZWnfGhSEuQdgfioHOfRqrhj6ALFHEHc09DiXB7aFjQqBkHoqxo+pbS9S5glPNwfZEKJqkvkknoqiHoy4rrO8jcjZXYRWSVrTzZ6PHuWuCjQFGLh0Blh106w3p8sNFawUjgJ94HUk6y5e71766revIkvrHFYXfcBzguxIii+S76DQVBmWhC58GfoKeoAPzgM2zhEX0Fec7g76YEXXas7Ivk22sqLdo1U7WKwjPs58hHUY4xBcZSyiAeDTYSW8PhVw+1eFywMG9RENdMjJGXXI+KZArjHIHMqakMmH1NMQhOtq8D733pEfTsJ/GUisx0S9wIMRKlwvrXcW3R3fLoiamKSdHfKCicO2vlY5LadHY0a2naS0jmaYO2MqvWYuUHHpSWj+vsnt4JnMqRkiNv5Tns5rXDCHgSw2SOLX7BlQDb3BKZsQxBtxbnUbyQhRFS2ZaNXtRrvX+Uaf/rbOtedTjP4I="
-  file_glob: true
-  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
-  on:
-    condition: $TRAVIS_RUST_VERSION = stable
-    tags: true
   provider: releases
   skip_cleanup: true
+  file_glob: true
+  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
+  api_key:
+    secure: "QZmkrA+bDTZxXAKEboA/YVrpEPur68oywoASyczDOZHynzGCtyGRltroyg0apgIj5WYgrYpf5L3Yd3jyp6mFUpSLMyz9BQI0u+SIMRloyV5z94wj3yRGg8Lq1Kx0gLfP5CihCjZzoMftvZQphLTkrhv/rSdnLYjrfe6E/m0dapWzQ3pElixuc9gm2s5lIk4LefqBEywd7WQUkNwzFN/ZWnfGhSEuQdgfioHOfRqrhj6ALFHEHc09DiXB7aFjQqBkHoqxo+pbS9S5glPNwfZEKJqkvkknoqiHoy4rrO8jcjZXYRWSVrTzZ6PHuWuCjQFGLh0Blh106w3p8sNFawUjgJ94HUk6y5e71766revIkvrHFYXfcBzguxIii+S76DQVBmWhC58GfoKeoAPzgM2zhEX0Fec7g76YEXXas7Ivk22sqLdo1U7WKwjPs58hHUY4xBcZSyiAeDTYSW8PhVw+1eFywMG9RENdMjJGXXI+KZArjHIHMqakMmH1NMQhOtq8D733pEfTsJ/GUisx0S9wIMRKlwvrXcW3R3fLoiamKSdHfKCicO2vlY5LadHY0a2naS0jmaYO2MqvWYuUHHpSWj+vsnt4JnMqRkiNv5Tns5rXDCHgSw2SOLX7BlQDb3BKZsQxBtxbnUbyQhRFS2ZaNXtRrvX+Uaf/rbOtedTjP4I="
+  on:
+    tags: true
 
 cache: cargo
 before_cache:
