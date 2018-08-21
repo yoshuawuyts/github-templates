@@ -1,7 +1,6 @@
 dist: trusty
 language: rust
-services: docker
-sudo: required
+sudo: false
 
 env:
   global:
@@ -51,6 +50,7 @@ before_cache:
 
 branches:
   only:
+    - /\d+\.\d+[a-z]/
     - master
 
 notifications:
