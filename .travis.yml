@@ -51,7 +51,7 @@ before_cache:
 
 branches:
   only:
-    - /\d+\.\d+[a-z]/
+    - /\d+\.\d+\.\d+/
     - master
 
 notifications:
