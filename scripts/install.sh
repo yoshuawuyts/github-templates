@@ -45,7 +45,7 @@ main() {
 
   # Install test dependencies
   rustup component add rustfmt-preview
-  cargo install clippy -f
+  # rustup component add clippy-preview --toolchain=nightly
 }
 
 main

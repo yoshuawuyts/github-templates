@@ -12,7 +12,7 @@ main() {
     fi
 
     cargo fmt -- --check
-    cargo clippy -- -D clippy
+    # cargo clippy -- -D clippy
 
     cross test --target $TARGET
     cross test --target $TARGET --release
