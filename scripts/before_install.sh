@@ -42,6 +42,10 @@ main() {
            --git japaric/cross \
            --tag $tag \
            --target $target
+
+  # Install test dependencies
+  rustup component add rustfmt-preview
+  cargo install clippy -f
 }
 
 main

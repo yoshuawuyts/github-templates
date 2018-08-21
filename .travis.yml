@@ -1,19 +1,3 @@
-language: rust
-rust:
-  - nightly
-
-before_script: |
-  rustup component add rustfmt-preview &&
-  cargo install clippy -f
-script: |
-  cargo fmt -- --check &&
-  cargo clippy -- -D clippy &&
-  cargo build --verbose &&
-  cargo test  --verbose
-cache: cargo
-
-############
-
 dist: trusty
 language: rust
 services: docker
@@ -24,8 +8,6 @@ env:
     - CRATE_NAME=github-templates
 
 matrix:
-  # TODO These are all the build jobs. Adjust as necessary. Comment out what you
-  # don't need
   include:
     # Linux
     - env: TARGET=armv7-unknown-linux-gnueabihf
@@ -58,19 +40,11 @@ before_deploy:
   - sh ci/before_deploy.sh
 
 deploy:
-  # TODO update `api_key.secure`
-  # - Create a `public_repo` GitHub token. Go to: https://github.com/settings/tokens/new
-  # - Encrypt it: `travis encrypt 0123456789012345678901234567890123456789
-  # - Paste the output down here
   api_key:
     secure: "QZmkrA+bDTZxXAKEboA/YVrpEPur68oywoASyczDOZHynzGCtyGRltroyg0apgIj5WYgrYpf5L3Yd3jyp6mFUpSLMyz9BQI0u+SIMRloyV5z94wj3yRGg8Lq1Kx0gLfP5CihCjZzoMftvZQphLTkrhv/rSdnLYjrfe6E/m0dapWzQ3pElixuc9gm2s5lIk4LefqBEywd7WQUkNwzFN/ZWnfGhSEuQdgfioHOfRqrhj6ALFHEHc09DiXB7aFjQqBkHoqxo+pbS9S5glPNwfZEKJqkvkknoqiHoy4rrO8jcjZXYRWSVrTzZ6PHuWuCjQFGLh0Blh106w3p8sNFawUjgJ94HUk6y5e71766revIkvrHFYXfcBzguxIii+S76DQVBmWhC58GfoKeoAPzgM2zhEX0Fec7g76YEXXas7Ivk22sqLdo1U7WKwjPs58hHUY4xBcZSyiAeDTYSW8PhVw+1eFywMG9RENdMjJGXXI+KZArjHIHMqakMmH1NMQhOtq8D733pEfTsJ/GUisx0S9wIMRKlwvrXcW3R3fLoiamKSdHfKCicO2vlY5LadHY0a2naS0jmaYO2MqvWYuUHHpSWj+vsnt4JnMqRkiNv5Tns5rXDCHgSw2SOLX7BlQDb3BKZsQxBtxbnUbyQhRFS2ZaNXtRrvX+Uaf/rbOtedTjP4I="
   file_glob: true
   file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   on:
-    # TODO Here you can pick which targets will generate binary releases
-    # In this example, there are some targets that are tested using the stable
-    # and nightly channels. This condition makes sure there is only one release
-    # for such targets and that's generated using the stable channel
     condition: $TRAVIS_RUST_VERSION = stable
     tags: true
   provider: releases
@@ -78,12 +52,10 @@ deploy:
 
 cache: cargo
 before_cache:
-  # Travis can't cache files that are not readable by "others"
   - chmod -R a+r $HOME/.cargo
 
 branches:
   only:
-    # release tags
     - /^v\d+\.\d+\.\d+.*$/
     - master
 
