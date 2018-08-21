@@ -6,6 +6,7 @@ Generate GitHub issue templates.
 
 - [Documentation][8]
 - [Crates.io][2]
+- [Releases][9]
 
 ## Screenshot
 ![screenshot](./assets/screenshot.png)
@@ -54,3 +55,4 @@ $ cargo add github-templates
 [6]: https://crates.io/crates/github-templates
 [7]: https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square
 [8]: https://docs.rs/github-templates
+[9]: https://github.com/yoshuawuyts/github-templates/releases
