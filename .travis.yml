@@ -34,14 +34,14 @@ after_script: set +e
 
 before_deploy:
   - sh scripts/before_deploy.sh
+  - export BODY="$(cat CHANGELOG.md))"
 
 deploy:
   provider: releases
   skip_cleanup: true
   file_glob: true
-  file:
-    - $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
-    - README.md
+  body: ${BODY}
+  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   api_key:
     secure: "QZmkrA+bDTZxXAKEboA/YVrpEPur68oywoASyczDOZHynzGCtyGRltroyg0apgIj5WYgrYpf5L3Yd3jyp6mFUpSLMyz9BQI0u+SIMRloyV5z94wj3yRGg8Lq1Kx0gLfP5CihCjZzoMftvZQphLTkrhv/rSdnLYjrfe6E/m0dapWzQ3pElixuc9gm2s5lIk4LefqBEywd7WQUkNwzFN/ZWnfGhSEuQdgfioHOfRqrhj6ALFHEHc09DiXB7aFjQqBkHoqxo+pbS9S5glPNwfZEKJqkvkknoqiHoy4rrO8jcjZXYRWSVrTzZ6PHuWuCjQFGLh0Blh106w3p8sNFawUjgJ94HUk6y5e71766revIkvrHFYXfcBzguxIii+S76DQVBmWhC58GfoKeoAPzgM2zhEX0Fec7g76YEXXas7Ivk22sqLdo1U7WKwjPs58hHUY4xBcZSyiAeDTYSW8PhVw+1eFywMG9RENdMjJGXXI+KZArjHIHMqakMmH1NMQhOtq8D733pEfTsJ/GUisx0S9wIMRKlwvrXcW3R3fLoiamKSdHfKCicO2vlY5LadHY0a2naS0jmaYO2MqvWYuUHHpSWj+vsnt4JnMqRkiNv5Tns5rXDCHgSw2SOLX7BlQDb3BKZsQxBtxbnUbyQhRFS2ZaNXtRrvX+Uaf/rbOtedTjP4I="
   on:
