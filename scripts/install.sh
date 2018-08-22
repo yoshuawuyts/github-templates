@@ -46,6 +46,7 @@ main() {
   # Install test dependencies
   rustup component add rustfmt-preview
   rustup component add clippy-preview
+  cargo install --force changelog
 }
 
 main
