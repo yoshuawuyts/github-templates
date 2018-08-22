@@ -34,7 +34,7 @@ after_script: set +e
 
 before_deploy:
   - sh scripts/before_deploy.sh
-  - export BODY="$(cat CHANGELOG.md))"
+  - export BODY=$(printf "'%s'" "$(cat CHANGELOG.md))")
 
 deploy:
   provider: releases
