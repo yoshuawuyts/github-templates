@@ -7,7 +7,7 @@ main() {
   cross build --target $TARGET --release
 
   if [ ! -z $DISABLE_TESTS ]; then
-      return
+    return
   fi
 
   cargo fmt -- --check

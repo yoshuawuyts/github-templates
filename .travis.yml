@@ -34,16 +34,14 @@ after_script: set +e
 
 before_deploy:
   - sh scripts/before_deploy.sh
-  - export BODY=$(printf "'%s'" "$(cat CHANGELOG.md))" | tr '\n' ' ')
 
 deploy:
   provider: releases
   skip_cleanup: true
   file_glob: true
-  body: ${BODY}
   file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   api_key:
-    secure: "QZmkrA+bDTZxXAKEboA/YVrpEPur68oywoASyczDOZHynzGCtyGRltroyg0apgIj5WYgrYpf5L3Yd3jyp6mFUpSLMyz9BQI0u+SIMRloyV5z94wj3yRGg8Lq1Kx0gLfP5CihCjZzoMftvZQphLTkrhv/rSdnLYjrfe6E/m0dapWzQ3pElixuc9gm2s5lIk4LefqBEywd7WQUkNwzFN/ZWnfGhSEuQdgfioHOfRqrhj6ALFHEHc09DiXB7aFjQqBkHoqxo+pbS9S5glPNwfZEKJqkvkknoqiHoy4rrO8jcjZXYRWSVrTzZ6PHuWuCjQFGLh0Blh106w3p8sNFawUjgJ94HUk6y5e71766revIkvrHFYXfcBzguxIii+S76DQVBmWhC58GfoKeoAPzgM2zhEX0Fec7g76YEXXas7Ivk22sqLdo1U7WKwjPs58hHUY4xBcZSyiAeDTYSW8PhVw+1eFywMG9RENdMjJGXXI+KZArjHIHMqakMmH1NMQhOtq8D733pEfTsJ/GUisx0S9wIMRKlwvrXcW3R3fLoiamKSdHfKCicO2vlY5LadHY0a2naS0jmaYO2MqvWYuUHHpSWj+vsnt4JnMqRkiNv5Tns5rXDCHgSw2SOLX7BlQDb3BKZsQxBtxbnUbyQhRFS2ZaNXtRrvX+Uaf/rbOtedTjP4I="
+    secure: "t3oksuImus4M9s68EEw4WOgOtZcP6r2dgZU4ugSdvJiRXW6G7mT2i3aKOmldr3/arloG38N3nhQk+gC1CWyg8ub7OzpJGmCBECaU8QRRETZyMVrHVarfDdVlzfp4xBAMJi+1oXaNc7fVpwWF8wvGLxUgfV/cuBqaEce0ewkS5RF6nvQcsynRZMHw2uk2V1JHR+ZPQIrTk31MKJuZXL8YWsXZHRjCVJd701OLYGgkSHKxNxvd9M5gJyWLcXajO7OJUDzBDBjBRtldklyz003UQi0XX2sMD/nZEPZH41mBytQOU2Tag8K51EXqhgy62nE2zyhnLslpKmzjLp9yriGniKkStDowjwVtlTy3qIil2mFpFl0oHQiKHawgmikhGqRtP3F/85WdfRiumBOhQxkQrCbxnry5/xnjrrzXACMjc94w/AtShkl6TnH6Ki6/o9C7QdxhwagZB2IQbPDc8sbd+bP5GzX18VpwyLf9zjRcimR2pzbwbpPQRSCKoL3SjLid081HVw3PKYG694mNIZ8XkIlUjmtVD2j3sbseOGMAZHESuegw+6+DRGyoMtVgul/Jva66Wyqs9dl21TW3K8MAekkUBoYtAqtPOCNVVCzD67l9p67wSuV/IB4ovFsBtBCCdnIYZDfwRGAGXlQDIQbOm7KxyjLW7excjOrBPa2irv4="
   on:
     tags: true
 
