@@ -11,9 +11,22 @@ One paragraph explanation of the feature.
 Why are we doing this? What use cases does it support? What is the expected
 outcome?
 
-## Expected Behavior
-Tell us how the feature should work. Explain the feature largely in terms of
-examples.
+## Guide-level explanation
+Explain the proposal as if it was already included in the project and you
+were teaching it to another programmer. That generally means:
+
+- Introducing new named concepts.
+- Explaining the feature largely in terms of examples.
+- If applicable, provide sample error messages, deprecation warnings, or
+  migration guidance.
+
+## Reference-level explanation
+This is the technical portion of the feature request. Explain the design in
+sufficient detail that:
+
+- Its interaction with other features is clear.
+- It is reasonably clear how the feature would be implemented.
+- Corner cases are dissected by example.
 
 ## Drawbacks
 Why should we _not_ do this?
