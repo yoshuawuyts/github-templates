@@ -41,7 +41,7 @@ template](https://github.com/rust-lang/rfcs/blob/master/0000-template.md).
 
 ## Installation
 ```sh
-$ cargo add github-templates
+$ cargo install github-templates
 ```
 
 ## License
